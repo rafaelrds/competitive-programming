@@ -2,3 +2,7 @@
 *.out
 
 *.txt
+*.exe
+
+test.*
+wrong*.*
