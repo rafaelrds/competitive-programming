@@ -11,17 +11,17 @@ int main() {
 	int size = 0;
 	int M_SIZE = 12;
 	double M[M_SIZE][M_SIZE];
-	for (int i = 0; i < M_SIZE; i++) {
-		for (int j = 0; j < M_SIZE; j++) {
-			cin >> M[i][j];
+	for (int row = 0; row < M_SIZE; row++) {
+		for (int col = 0; col < M_SIZE; col++) {
+			cin >> M[row][col];
 		}
 	}
 
-	for (int i = M_SIZE/2; i < M_SIZE; i++) {
-		for (int j = 0; j < M_SIZE; j++) {
-				if (j > M_SIZE - 1 - i and j < i) {
+	for (int row = M_SIZE/2; row < M_SIZE; row++) {
+		for (int col = 0; col < M_SIZE; col++) {
+				if (col > M_SIZE - 1 - row and col < row) {
 					size++;
-					ans += M[i][j];
+					ans += M[row][col];
 				}
 		}
 	}

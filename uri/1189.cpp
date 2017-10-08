@@ -19,11 +19,11 @@ int main() {
 		}
 	}
 
-	for (int i = 0; i < (M_SIZE - 1)/2; i++) {
-		for (int j = 0; j < M_SIZE; j++) {
-			if (j > i and j < M_SIZE - i - 1) {
+	for (int row = 0; row < (M_SIZE - 1)/2; row++) {
+		for (int col = 0; col < M_SIZE; col++) {
+			if (col > row and col < M_SIZE - row - 1) {
 				size++;
-				ans += T[i][j];
+				ans += T[row][col];
 			}
 		}
 	}
