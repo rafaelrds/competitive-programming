@@ -2,6 +2,7 @@ in
 out
 *.pyc
 *.out
+contest_*.*
 
 *.txt
 *.exe
