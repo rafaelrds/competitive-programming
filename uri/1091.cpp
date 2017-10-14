@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	int K, d_x, d_y, X, Y;
-	
+
 	while (cin >> K && K != 0)
 	{
 		cin >> d_x >> d_y;
@@ -24,7 +24,7 @@ int main()
 				cout << "SO" << endl;
 		}
 	}
-	
+
 
 	return 0;
 }

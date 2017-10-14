@@ -6,29 +6,27 @@ using namespace std;
 
 int main ()
 {
-	int N, T, i, j;
+	int N, T, j;
 	cin >> N;
-	for (i=0; i<N; i++)
+	while (N--)
 	{
 		cin >> T;
 		int tiros[T];
 		string pulos;
 
-		int j;
-		for (j=0; j<T; j++)
-			scanf("%d", &tiros[j]);
+		for (int j = 0; j < T; j++)
+			cin >> tiros[j];
 
 		cin >> pulos;
-		
-		int ans = 0;	
-		for (j=0; j<T; j++)
-		{
+
+		int ans = 0;
+		for (int j = 0; j < T; j++)	{
 			if (pulos[j] == 'S' and tiros[j] <= 2)
 				ans++;
 			if (pulos[j] == 'J' and tiros[j] > 2)
 				ans++;
 		}
-			
+
 		cout << ans << endl;
 	}
 
