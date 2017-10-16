@@ -9,3 +9,5 @@ contest_*.*
 
 test*.*
 wrong*.*
+
+.vscode
