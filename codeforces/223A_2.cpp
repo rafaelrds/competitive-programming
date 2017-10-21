@@ -21,7 +21,7 @@ int main() {
                 sereja += cards[rightmost];
                 rightmost--;
             }
-        } 
+        }
         else {
             if (cards[leftmost] > cards[rightmost]) {
                 dima += cards[leftmost];
