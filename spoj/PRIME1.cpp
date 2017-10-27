@@ -1,42 +1,42 @@
-#include <bits/stdc++.h> 
-#define _ ios_base::sync_with_stdio(0);cin.tie(0);
+#include <stdio.h>
+#include <map>
 
 using namespace std;
 
-int is_prime(unsigned long long number){
-    if (number <= 1) return 0;
-	unsigned long long i;
-    for (i=2; i*i<=number; i++) {
-        if (number % i == 0) return 0;
+map<int, bool> primes;
+
+int is_prime(int n) {
+    if (n == 1) return 0;
+    for (int i = 2; i*i <= n; i++) {
+        if (n % i == 0) return 0;
     }
+    primes[n] = true;
     return 1;
 }
 
-int nth_prime(unsigned long long nth_prime){
-	long long number = 3;
-	long long n_prime = 2;
-	
-	while(n_prime < nth_prime){
-		number += 2;
-		if(is_prime(number)) {
-			n_prime++;
-		}
-	}
-	return number;
+
+void solve(int n, int m) {
+    for (int i = n; i <= m; i++) {
+        if (primes[i]) {
+            printf("%d\n", i);
+        }
+        else if (is_prime(i)) {
+            primes[i] == true;
+            printf("%d\n", i);
+        }
+    }
+    printf("\n");
 }
 
+
 int main () {
+    int t;
+    scanf("%d", &t);
+    int n, m;
+    while(t--) {
+        scanf("%d %d", &n, &m);
+        solve(n, m);
+    }    
 
-  int x=10, y=20;                              // x:10 y:20
-  std::swap(x,y);                              // x:20 y:10
-
-  std::vector<int> foo (4,x), bar (6,y);       // foo:4x20 bar:6x10
-  std::swap(foo,bar);                          // foo:6x10 bar:4x20
-
-  std::cout << "foo contains:";
-  for (std::vector<int>::iterator it=foo.begin(); it!=foo.end(); ++it)
-    std::cout << ' ' << *it;
-  std::cout << '\n';
-
-  return 0;
+    return 0;
 }

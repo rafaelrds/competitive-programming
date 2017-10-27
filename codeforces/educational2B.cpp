@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <math.h>
 
 using namespace std;
 
@@ -33,8 +34,15 @@ int main() {
 
     for (int i = 0; i < m; i++) {
         int j = binary_search(a, n, b[i]);
-        while (a[j] == a[j + 1]) j++;
-        
+
+        int c = 2, index = 0;
+        while (a[j] == a[j + (int) pow(c, index)]) {
+            j += (int) pow(c, index);
+            c++;
+        }
+        while (a[j] == a[j + 1])
+            j++;
+
         cout << j + 1;
         if (i != m - 1) cout << " ";
     }
