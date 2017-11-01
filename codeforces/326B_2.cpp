@@ -14,7 +14,6 @@ bool isLovely(long long n) {
 
 void solve(long long n)
 {
-    // Vector to store half of the divisors
     vector<long long> va;
     vector<long long> vb;
     for (long long i=1; i<=sqrt(n); i++)
@@ -48,10 +47,7 @@ void solve(long long n)
 int main() {
     long long n;
     cin >> n;
-
-    // cout << isLovely(6) << endl;
     solve(n);
-
 
     return 0;
 }
