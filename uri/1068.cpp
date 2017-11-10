@@ -1,28 +1,31 @@
 #include <iostream>
-#include <stdio.h>
-#include <string.h>
+#include <string>
+#include <stack>
 
 using namespace std;
 
+int main() {
+    string s;
+    stack<char> st;
 
-int main ()
-{
+    while (cin >> s) {
+        bool flag = true;
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == '(') st.push(s[i]);
+            else if (s[i] == ')') {
+                if (st.empty()) {
+                    flag = false;
+                    break;
+                }
+                else st.pop();
+            }
+        }
+        if (st.empty() && flag)
+            cout << "correct" << endl;
+        else
+            cout << "incorrect" << endl;
+        while (!st.empty()) st.pop();
+    }
 
-	char mensagem[1005];
-
-	while(scanf("%s", mensagem) != EOF)
-	{
-		int count = 0;
-		int size = strlen(mensagem);
-		for (int i = 0; i < size; ++i)
-		{
-			if (mensagem[i] == '(') count++;
-			else if (mensagem[i] == ')') count--;
-			if (count < 0) break;
-		}
-
-		printf("%s\n", (count==0) ? "correct" : "incorrect");
-	}
-
-	return 0;
+    return 0;
 }
