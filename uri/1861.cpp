@@ -7,6 +7,9 @@ using namespace std;
 
 int main()
 {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	
 	map<string, int> murders;
 	set<string> dead;
 
@@ -18,10 +21,11 @@ int main()
 	}
 
 	map<string,int>::iterator it;
+	
 	cout << "HALL OF MURDERERS" << endl;
 	for (it=murders.begin(); it != murders.end(); it++)
 	{
-		if (dead.count(it->first) == 0)
+		if (dead.find(it->first) == dead.end())
 			cout << it->first << " " << it->second << endl;
 	}
 	return 0;
