@@ -26,7 +26,7 @@ int main() {
     int sum_arr[n];
     for (int i = 0; i < n; i++) {
         cin >> books[i];
-        if (n == 0)
+        if (i == 0)
             sum_arr[i] = books[i];
         else
             sum_arr[i] = books[i] + sum_arr[i - 1];
